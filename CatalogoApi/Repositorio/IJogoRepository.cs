@@ -1,12 +1,11 @@
 ﻿using CatalogoApi.Entity;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CatalogoApi.Repositorio
 {
-    public interface IJogoRepository
+    public interface IJogoRepository : IDisposable
     {
         Task<List<Jogo>> Obter(int pagina, int quantidade);
         Task<Jogo> Obter(Guid id);

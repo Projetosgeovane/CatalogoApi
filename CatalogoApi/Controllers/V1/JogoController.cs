@@ -58,7 +58,7 @@ namespace CatalogoApi.Controllers.V1
             }
         }
 
-        [HttpPut("{idJogo:guid}"]
+        [HttpPut("{idJogo:guid}")]
         public async Task<ActionResult> AtualizarJogo([FromRoute] Guid idJogo, [FromBody] JogoInputmodel jogoInputModel)
         {
             try
@@ -88,8 +88,8 @@ namespace CatalogoApi.Controllers.V1
             }
         }
 
-        [HttpDelete("{idJogo:guid}"]
-        public async Task<AcceptedResult> ApagarJogo(Guid idJogo)
+        [HttpDelete("{idJogo:guid}")]
+        public async Task<ActionResult> ApagarJogo([FromRoute] Guid idJogo)
         {
             try
             {
@@ -100,7 +100,7 @@ namespace CatalogoApi.Controllers.V1
             }
             catch (Exception ex)
             {
-                ;
+                return NotFound("Não existe este jogo");
             }
         }
 
